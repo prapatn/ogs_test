@@ -9,35 +9,6 @@ import (
 	"github.com/gorilla/mux"
 )
 
-type Users struct {
-	Id     int    `json:"id"`
-	Name   string `json:"name"`
-	Email  string `json:"email"`
-	Gender string `json:"gender"`
-	Status string `json:"status"`
-}
-type Posts struct {
-	Id            int        `json:"id"`
-	UserId        int        `json:"user_id"`
-	Title         string     `json:"title"`
-	Body          string     `json:"body"`
-	CommentAmount int        `json:"comment_amount"`
-	Commnets      []Commnets `json:"comments"`
-}
-type Commnets struct {
-	Id     int    `json:"id"`
-	PostId int    `json:"post_id"`
-	Name   string `json:"name"`
-	Email  string `json:"email"`
-	Body   string `json:"body"`
-}
-
-type ResponseUsersPostsComments struct {
-	User       Users
-	PostAmount int     `json:"post_amount"`
-	Posts      []Posts `json:"posts"`
-}
-
 func main() {
 	// Init router
 	r := mux.NewRouter()
